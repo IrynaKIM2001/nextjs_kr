@@ -1,0 +1,32 @@
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.paginBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    background-color:  #fce99f;
+    color: #213547;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 50px;
+    border-radius: 50%;
+    font-weight: 500;
+    transition: transform 0.3s ease, color 0.3s ease;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    text-decoration: none !important;
+}
+.paginBtn:hover {
+    transform: scale(1.1);
+    color: #ff6347;
+}
+.paginBtn:visited{
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
