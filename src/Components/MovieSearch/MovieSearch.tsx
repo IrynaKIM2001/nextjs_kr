@@ -1,12 +1,11 @@
 "use client";
 
 import { useState } from 'react';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import './MovieSearch.css';
 
 export default function MovieSearch() {
     const router = useRouter();
-    const pathname = usePathname();
     const searchParams = useSearchParams();
     const [query, setQuery] = useState(searchParams.get('q') || '');
 
@@ -16,10 +15,8 @@ export default function MovieSearch() {
         const params = new URLSearchParams(searchParams);
         if (query.trim()) {
             params.set('q', query.trim());
-        } else {
-            params.delete('q');
         }
-        router.push(`${pathname}?${params.toString()}`);
+        router.push(`/?${params.toString()}`);
         setQuery('');
     };
 
