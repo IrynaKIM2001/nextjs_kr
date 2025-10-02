@@ -1,6 +1,6 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    reactStrictMode: true,
     images: {
         remotePatterns: [
             {
@@ -8,7 +8,9 @@ const nextConfig: NextConfig = {
                 hostname: 'image.tmdb.org',
                 port: '',
                 pathname: '/t/p/**',
-            },],},
+            },
+        ],
+    },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

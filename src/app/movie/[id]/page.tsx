@@ -1,13 +1,20 @@
 import {getMovieById} from "@/Services/services.api";
 import StarRating from "@/Components/StarsRating/StarsRating";
 import Image from 'next/image';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from './MovieDetail.module.css';
+import {Metadata} from "next";
 
 type MovieDetailPageProps = {
     params: { id: string };
 };
 
+export async function generateMetadata({ params }: MovieDetailPageProps): Promise<Metadata> {
+    const movie = await getMovieById(params.id);
+    return {
+        title: `${movie.title} | MovieQueen`,
+        description: movie.overview,
+    };
+}
 export default async function MovieDetailPage({params}:MovieDetailPageProps) {
     const movie = await getMovieById(params.id);
     const imageUrl = `https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`;
@@ -21,7 +28,7 @@ export default async function MovieDetailPage({params}:MovieDetailPageProps) {
                 width={1280}
                 height={720}
                 priority={true}
-                className={styles.backgroundImage}
+                className={styles.backgroundImage} // Також додаємо клас сюди для стилізації
             />
             <div className={styles.movieInfoDetailsPage}>
                 <h3 className={styles.articleH3DetailsPage}>{movie.title}</h3>

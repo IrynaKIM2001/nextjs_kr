@@ -1,7 +1,8 @@
 
 import './globals.css';
-import {Metadata} from "next";
 import HeaderComponent from "@/Components/HeaderComponent/HeaderComponent";
+import {Metadata} from "next";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const metadata:Metadata  = {
     title: "MovieQueen",
@@ -25,8 +26,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap" rel="stylesheet" />
         </head>
         <body>
-        <HeaderComponent/>
-        <main>{children}</main>
+        <HeaderComponent />
+        <main >{children}</main>
         </body>
         </html>
     );

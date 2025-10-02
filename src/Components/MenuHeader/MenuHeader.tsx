@@ -12,7 +12,7 @@ export default function  MenuHeader({genres}:IProps){
             <nav>
                 <ul>
                     <li>
-                        <Link href="/public">
+                        <Link href="/">
                             Home
                         </Link>
                     </li>
@@ -20,7 +20,7 @@ export default function  MenuHeader({genres}:IProps){
                         <span>Genres</span>
                         <div className="dropdown-content">
                             {genres.map((genre) =>
-                                <Link key={genre.id} href={`/public?genre=${genre.id}&name=${genre.name}`}>
+                                <Link key={genre.id} href={`/?genre=${genre.id}&name=${genre.name}`}>
                                     {genre.name}
                                 </Link>
                             )}
