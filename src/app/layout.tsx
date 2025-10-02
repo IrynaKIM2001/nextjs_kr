@@ -2,6 +2,7 @@
 import './globals.css';
 import HeaderComponent from "@/Components/HeaderComponent/HeaderComponent";
 import {Metadata} from "next";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const metadata:Metadata  = {
     title: "MovieQueen",
@@ -26,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </head>
         <body>
         <HeaderComponent />
-        <main>{children}</main>
+        <main >{children}</main>
         </body>
         </html>
     );
